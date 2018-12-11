@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 int recursive(listint_t **head, listint_t *tail);
 
@@ -15,33 +14,21 @@ int recursive(listint_t **head, listint_t *tail);
  */
 int is_palindrome(listint_t **head)
 {
-	unsigned int len, mid, i;
-	listint_t *center;
-	listint_t *current;
+	listint_t *front;
 
 	if (head == NULL || *head == NULL)
 		return (1);
 
-	current = *head;
-	len = 0;
-	while (current != NULL)
-	{
-		current = current->next;
-		len++;
-	}
-	mid = len / 2;
-	center = *head;
-	for (i = 0; i < mid; i++)
-		center = center->next;
-	current = *head;
-	return (recursive(&current, center));
+	front = *head;
+	return (recursive(&front, *head));
 }
 
 /**
  * recursive - a recursive helper function where head begins at the start of
  * the singly linked list and tail begins at the center. Base case is when tail
  * reaches the end of the linked list and we begin checking the first and last
- * nodes, and work towards the center.
+ * nodes, having *head slowly work towards the end of the linked list. There is
+ * overlap when performing checks. Runtime at 2n..
  *
  * @head: Double pointer to the head, needs to be able to change as call stacks
  * are popped.
@@ -51,22 +38,11 @@ int is_palindrome(listint_t **head)
  */
 int recursive(listint_t **head, listint_t *tail)
 {
-	int previous;
 
 	if (tail->next)
 	{
-		previous = recursive(head, tail->next);
-		if (previous == 0)
+		if (recursive(head, tail->next) == 0)
 			return (0);
-		if ((*head)->n != tail->n)
-		{
-			return (0);
-		}
-		else
-		{
-			*head = (*head)->next;
-			return (1);
-		}
 	}
 	if ((*head)->n != tail->n)
 	{
