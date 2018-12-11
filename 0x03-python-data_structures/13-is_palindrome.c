@@ -1,6 +1,7 @@
 #include "lists.h"
+#include <stdio.h>
 
-listint_t *add_nodeint(listint_t **head, const int n);
+int recursive(listint_t **head, listint_t *tail);
 
 /**
  * is_palindrome - The function determines if a single linked list containing
@@ -14,62 +15,66 @@ listint_t *add_nodeint(listint_t **head, const int n);
  */
 int is_palindrome(listint_t **head)
 {
-	unsigned int mid, i;
+	unsigned int len, mid, i;
+	listint_t *center;
 	listint_t *current;
-	listint_t *tail;
-	listint_t *back;
 
 	if (head == NULL || *head == NULL)
 		return (1);
 
 	current = *head;
-	mid = 0;
-	tail = NULL;
+	len = 0;
 	while (current != NULL)
 	{
 		current = current->next;
-		mid++;
+		len++;
 	}
-	mid /= 2;
-	current = *head;
+	mid = len / 2;
+	center = *head;
 	for (i = 0; i < mid; i++)
-		current = current->next;
-	while (current)
-	{
-		add_nodeint(&tail, current->n);
-		current = current->next;
-	}
-	back = tail;
+		center = center->next;
 	current = *head;
-	for (i = 0; i < mid; i++)
-	{
-		if (current->n != tail->n)
-		{
-			free_listint(back);
-			return (0);
-		}
-		current = current->next;
-		tail = tail->next;
-	}
-	return (1);
+	return (recursive(&current, center));
 }
 
 /**
- * add_nodeint - adds a new node at the beginning of a listint_t list
- * @head: pointer to a pointer of the start of the list
- * @n: integer to be included in node
- * Return: address of the new element or NULL if it fails
+ * recursive - a recursive helper function where head begins at the start of
+ * the singly linked list and tail begins at the center. Base case is when tail
+ * reaches the end of the linked list and we begin checking the first and last
+ * nodes, and work towards the center.
+ *
+ * @head: Double pointer to the head, needs to be able to change as call stacks
+ * are popped.
+ * @tail: Pointer to the center of the singly linked list during first call.
+ *
+ * Return: 1 if the singly linked list is a palindrome, 0 otherwise.
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+int recursive(listint_t **head, listint_t *tail)
 {
-	listint_t *new;
+	int previous;
 
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	new->next = *head;
-	*head = new;
-
-	return (new);
+	if (tail->next)
+	{
+		previous = recursive(head, tail->next);
+		if (previous == 0)
+			return (0);
+		if ((*head)->n != tail->n)
+		{
+			return (0);
+		}
+		else
+		{
+			*head = (*head)->next;
+			return (1);
+		}
+	}
+	if ((*head)->n != tail->n)
+	{
+		return (0);
+	}
+	else
+	{
+		*head = (*head)->next;
+		return (1);
+	}
 }
