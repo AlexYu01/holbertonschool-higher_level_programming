@@ -84,7 +84,7 @@ void print_python_bytes(PyObject *p)
 
 /**
  * print_python_float - Checks if the object is a Python float object. If so
- * print the float value. If it is not, print an error message..
+ * print the float value. If it is not, print an error message.
  *
  * @p: Pointer to a Python object.
  *
@@ -92,22 +92,14 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
-	char str[80], found = 0;
-	int i, size;
+	PyObject *convert;
 
 	printf("[.] float object info\n");
 	if (PyFloat_Check(p))
 	{
-		size = sprintf(str, "%.16g", PyFloat_AsDouble(p));
-		printf("  value: %s", str);
-		for (i = 0; i < size && !found; i++)
-		{
-			if (str[i] == '.')
-				found = 1;
-		}
-		if (!found)
-			printf(".0");
-		printf("\n");
+		convert = PyObject_Repr(p);
+		convert = PyUnicode_AsEncodedString(convert, "utf-8", "~E~");
+		printf("  value: %s\n", ((PyBytesObject *) convert)->ob_sval);
 	}
 	else
 	{
