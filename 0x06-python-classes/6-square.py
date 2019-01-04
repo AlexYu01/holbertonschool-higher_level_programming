@@ -58,7 +58,7 @@ class Square:
         'position' is the location of the top left corner of the square."""
         if self.__size is not 0:
             for y in range(self.__position[1]):
-                print()
+                print("")
             for i in range(self.__size):
                 for x in range(self.__position[0]):
                     print(" ", end="")
@@ -66,4 +66,4 @@ class Square:
                     print("#", end="")
                 print("")
         else:
-            print(end="")
+            print("", end="")
