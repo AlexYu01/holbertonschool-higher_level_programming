@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """MagicClass that creates an instance of a circle."""
-    def __init__(self, radius = 0):
+    def __init__(self, radius=0):
         """Initializing instance of MagicClass"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
