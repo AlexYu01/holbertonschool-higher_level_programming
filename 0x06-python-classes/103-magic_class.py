@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+import math
 """Module containing the MagicClass"""
 
 
 class MagicClass:
     """MagicClass that creates an instance of a circle."""
-
     def __init__(self, radius):
         """Initializing instance of MagicClass"""
         self.__radius = 0
