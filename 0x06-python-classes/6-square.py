@@ -56,9 +56,9 @@ class Square:
         """Prints a square with hashtags using the 'size'. Uses 'position' to
         offset where the printing should begin. The x, y coordinate in
         'position' is the location of the top left corner of the square."""
-        for y in range(self.__position[1]):
-            print()
         if self.__size is not 0:
+            for y in range(self.__position[1]):
+                print()
             for i in range(self.__size):
                 for x in range(self.__position[0]):
                     print(" ", end="")
@@ -66,4 +66,4 @@ class Square:
                     print("#", end="")
                 print("")
         else:
-            print("")
+            print(end="")
