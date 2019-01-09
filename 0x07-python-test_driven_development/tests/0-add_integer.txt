@@ -13,6 +13,11 @@ Test with no arguments:
    >>> add_integer()
    Traceback (most recent call last):
    TypeError: add_integer() missing 1 required positional argument: 'a'
+   
+Test with only one argument:
+
+   >>> add_integer(1)
+   99
 
 Test both arguments as integers:
 
@@ -31,13 +36,6 @@ Test both arguments as floats:
 
    >>> add_integer(1.8, 2.3)
    3
-
-Test with float overflow:
-
-   >>> add_integer(3.0 ** 1024, 1.5)
-   ... # doctest: +ELLIPSIS
-   Traceback (most recent call last):
-   OverflowError: ...
 
 Test with float NaN:
 
