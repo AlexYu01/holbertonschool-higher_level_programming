@@ -27,6 +27,11 @@ class TestMaxInteger(unittest.TestCase):
         """ Test function on list with 1 element """
         self.assertEqual(max_integer([3]), 3)
 
+    def test_mixed_elements(self):
+        """ Test function on list with mixed type elements """
+        with self.assertRaises(TypeError):
+            max_integer([3, 5.1, "String"])
+
     def test_not_list(self):
         """ Test function on non iterable """
         with self.assertRaises(TypeError):
