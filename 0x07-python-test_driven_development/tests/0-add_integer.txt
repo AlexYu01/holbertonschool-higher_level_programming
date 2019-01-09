@@ -8,10 +8,21 @@ Import ``add_integer`` from the 0-add_integer`` module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
+Test with no arguments:
+
+   >>> add_integer()
+   Traceback (most recent call last):
+   TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test with only one argument:
+
+   >>> add_integer(1)
+   99
+
 Test both arguments as integers:
 
-    >>> add_integer(3, 2)
-    5
+   >>> add_integer(3, 2)
+   5
 
 Test combination of integer and floats:
 
@@ -25,6 +36,18 @@ Test both arguments as floats:
 
    >>> add_integer(1.8, 2.3)
    3
+
+Test with float overflow:
+
+   >>> add_integer(3.0 ** 1024, 1.5)
+   Traceback (most recent call last):
+   OverflowError: (34, 'Numerical result out of range')
+
+Test with float NaN:
+
+   >>> add_integer(float('nan'), 3.1)
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
 
 Test both arguments as neither floats nor integers:
 
