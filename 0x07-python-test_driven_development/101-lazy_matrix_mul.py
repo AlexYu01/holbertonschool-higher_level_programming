@@ -19,4 +19,4 @@ def lazy_matrix_mul(m_a, m_b):
         :obj:`list` of :obj:`list` of int or float: Product of two matrices.
     """
 
-    return np.dot(m_a, m_b)
+    return np.matmul(m_a, m_b)
