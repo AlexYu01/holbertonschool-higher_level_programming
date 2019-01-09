@@ -6,9 +6,17 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """ Testing Max Integer """
-    def test_list(self):
-        """ Test function on a normal list """
+    def test_max_end(self):
+        """ Test function on a normal list with max at the end """
         self.assertEqual(max_integer([1, 2, 3]), 3)
+
+    def test_max_beg(self):
+        """ Test function on a normal list with max at the beginning """
+        self.assertEqual(max_integer([3, 2, 1]), 3)
+
+    def test_max_mid(self):
+        """ Test function on a normal list with max at the middle"""
+        self.assertEqual(max_integer([2, 3, 1]), 3)
 
     def test_string(self):
         """ Test function on a string """
