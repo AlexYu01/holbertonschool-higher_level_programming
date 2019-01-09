@@ -4,7 +4,7 @@
 """
 
 
-def print_square(size = 0):
+def print_square(size):
     """ Function that prints a square using '#' based on `size`.
 
     Args:
