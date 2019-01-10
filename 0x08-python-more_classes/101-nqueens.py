@@ -60,7 +60,7 @@ def recur_bt(matrix, row, col, n):
                 new_col = list(col)
                 new_col.remove(j)
                 new_matrix = recur_bt(matrix, row + 1, new_col, n)
-                if new_matrix is  not None:
+                if new_matrix is not None:
                     print(matrix)
                 matrix.remove([i, j])
     return None
