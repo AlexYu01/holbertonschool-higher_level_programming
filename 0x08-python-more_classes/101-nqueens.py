@@ -14,13 +14,12 @@ def all_possible(n=4):
                 to place on the board.
     """
 
-    for i in range(1, n - 1):
+    for i in range(n):
         matrix = []
         matrix.append([0, i])
-        row = [z for z in range(1, n)]
         col = [z for z in range(n)]
         col.remove(i)
-        print(recur_bt(matrix, row, col, n))
+        recur_bt(matrix, 1, col, n)
 
 
 def recur_bt(matrix, row, col, n):
@@ -49,7 +48,8 @@ def recur_bt(matrix, row, col, n):
     if len(matrix) is n:
         return matrix
 
-    for i in row:
+    if row:
+        i = row
         for j in col:
                 if (not bot_right(matrix, i + 1, j + 1, n) or
                     not bot_left(matrix, i + 1, j - 1, n) or
@@ -57,16 +57,12 @@ def recur_bt(matrix, row, col, n):
                         not top_right(matrix, i - 1, j + 1, n)):
                         continue
                 matrix.append([i, j])
-                new_row = list(row)
-                new_row.remove(i)
                 new_col = list(col)
                 new_col.remove(j)
-                new_matrix = recur_bt(matrix, new_row, new_col, n)
-                if new_matrix is None:
-                    matrix.remove([i, j])
-                    continue
-                else:
-                    return new_matrix
+                new_matrix = recur_bt(matrix, row + 1, new_col, n)
+                if new_matrix is  not None:
+                    print(matrix)
+                matrix.remove([i, j])
     return None
 
 
