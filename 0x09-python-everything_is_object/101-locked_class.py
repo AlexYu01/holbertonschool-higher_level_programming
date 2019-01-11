@@ -24,3 +24,15 @@ class LockedClass:
                                  "' object has no attribute '" +
                                  name + "'")
         self.__dict__[name] = value
+
+    def __getattr__(self, name):
+        """
+            Override the reserved method `getattr` to preven retrieval of any
+            attributes, including instance's dict.
+
+            Args:
+                name (:obj:`str`): A string.
+        """
+        raise AttributeError("'" + self.__class__.__name__ +
+                             "' object has no attribute '" +
+                             name + "'")
