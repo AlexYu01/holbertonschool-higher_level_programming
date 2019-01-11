@@ -20,12 +20,10 @@ class LockedClass:
                 value (any): value to assign to proposed attribute.
         """
         if name != "first_name":
-            raise AttributeError("'" + self.__class__.__name__ +
-                                 "' object has no attribute '" +
+            raise AttributeError("'LockedClass' object has no attribute '" +
                                  name + "'")
-        self.__dict__[name] = value
 
-    def __getattr__(self, name):
+    def __getattribute__(self, name):
         """
             Override the reserved method `getattr` to preven retrieval of any
             attributes, including instance's dict.
@@ -33,6 +31,6 @@ class LockedClass:
             Args:
                 name (:obj:`str`): A string.
         """
-        raise AttributeError("'" + self.__class__.__name__ +
-                             "' object has no attribute '" +
-                             name + "'")
+        if name == "__dict__":
+            raise AttributeError("'LockedClass' object has no attribute '" +
+                                 name + "'")
