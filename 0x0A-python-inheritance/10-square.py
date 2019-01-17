@@ -18,4 +18,5 @@ class Square(Rectangle):
         Args:
             size (int): `size` of the `Square` instance.
         """
+        super().integer_validator("size", size)
         super().__init__(size, size)
