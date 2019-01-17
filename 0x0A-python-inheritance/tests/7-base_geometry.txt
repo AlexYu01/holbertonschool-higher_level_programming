@@ -106,7 +106,9 @@ Test `integer_validator` function with `value` argument as non int:
 	Traceback (most recent call last):
 	ValueError: age must be greater than 0
 
-	>>> shape.integer_validator("age", 4)
+	>>> shape.integer_validator("age", "4")
+	Traceback (most recent call last):
+	TypeError: age must be an integer
 
 	>>> shape.integer_validator("age", (4,))
 	Traceback (most recent call last):
