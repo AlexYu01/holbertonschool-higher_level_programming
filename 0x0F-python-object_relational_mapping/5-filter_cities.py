@@ -17,7 +17,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     stmt = "SELECT c.name FROM cities c LEFT JOIN states s ON \
-            c.state_id = s.id WHERE s.name = '{}'".format(sys.argv[4])
+            c.state_id = s.id WHERE BINARY s.name = '{}'".format(sys.argv[4])
     cur.execute(stmt)
     query_rows = cur.fetchall()
 
