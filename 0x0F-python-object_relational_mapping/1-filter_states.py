@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
 """
     Module that performs MySQL query through MySQLdb module.
 """
+import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
