@@ -11,7 +11,8 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
 
     cur = conn.cursor()
-    stmt = "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    stmt = "SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY \
+    states.id ASC"
     cur.execute(stmt)
     query_rows = cur.fetchall()
 
