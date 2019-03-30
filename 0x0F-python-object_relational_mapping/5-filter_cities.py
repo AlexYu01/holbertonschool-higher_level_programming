@@ -7,10 +7,6 @@ import sys
 
 
 if __name__ == "__main__":
-    for c in sys.argv[4]:
-        if c == ';':
-            exit()
-
     conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                            passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
 
@@ -30,7 +26,7 @@ if __name__ == "__main__":
             print(row[0], end='')
             i += 1
             f = '\n'
-    print(end=f)
+    print('', end=f)
 
     cur.close()
     conn.close()
