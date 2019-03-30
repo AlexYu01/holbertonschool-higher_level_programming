@@ -16,8 +16,8 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    stmt = "SELECT c.name, s.name FROM cities c LEFT JOIN states s ON \
-    c.state_id = s.id"
+    stmt = "SELECT c.name, s.name FROM cities c INNER JOIN states s ON \
+    c.state_id = s.id ORDER BY c.id"
     cur.execute(stmt)
     query_rows = cur.fetchall()
 
