@@ -7,6 +7,8 @@ import sys
     Module that performs MySQL query through MySQLAlchemy.
 """
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        exit()
     db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
                                                             sys.argv[1],
                                                             sys.argv[2],
