@@ -16,19 +16,20 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    stmt = "SELECT c.name FROM cities c LEFT JOIN states s ON \
-            c.state_id = s.id WHERE BINARY s.name = '{}'".format(sys.argv[4])
+    stmt = "SELECT c.name, s.name FROM cities c LEFT JOIN states s ON \
+    c.state_id = s.id"
     cur.execute(stmt)
     query_rows = cur.fetchall()
 
     i = 0
     f = ''
     for row in query_rows:
-        if i != 0:
-            print(', ', end='')
-        print(row[0], end='')
-        i += 1
-        f = '\n'
+        if row[1] == sys.argv[4]:
+            if i != 0:
+                print(', ', end='')
+            print(row[0], end='')
+            i += 1
+            f = '\n'
     print(end=f)
 
     cur.close()
