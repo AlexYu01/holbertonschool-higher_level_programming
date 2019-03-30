@@ -18,15 +18,13 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
 
     i = 0
-    f = ''
     for row in query_rows:
         if row[1] == sys.argv[4]:
             if i != 0:
                 print(', ', end='')
             print(row[0], end='')
             i += 1
-            f = '\n'
-    print('', end=f)
+    print('')
 
     cur.close()
     conn.close()
