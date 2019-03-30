@@ -24,6 +24,6 @@ if __name__ == "__main__":
     if state is not None:
         print("{}: {}".format(state.id, state.name))
     else:
-        print('')
+        print('Nothing')
 
     session.close()
