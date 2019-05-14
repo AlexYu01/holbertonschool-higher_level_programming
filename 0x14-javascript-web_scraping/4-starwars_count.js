@@ -8,11 +8,10 @@ request(process.argv[2], function (err, resp, body) {
   } else if (resp.statusCode === 200) {
     let results = JSON.parse(body).results;
     let count = 0;
-    let wedgeAntilles = 'https://swapi.co/api/people/18/';
     for (let i = 0; i < results.length; i++) {
       let chars = results[i].characters;
       for (let j = 0; j < chars.length; j++) {
-        if (chars[j] === wedgeAntilles) {
+        if (chars[j].includes('/18')) {
           count++;
           j = chars.length;
         }
