@@ -5,7 +5,7 @@ const request = require('request');
 request(process.argv[2], function (err, resp, body) {
   if (err) {
     console.log(err);
-  } else if (resp.statusCode === 200 && resp.headers['content-type'] === 'application/json') {
+  } else if (resp.statusCode === 200) {
     let results = JSON.parse(body).results;
     let count = 0;
     let wedgeAntilles = 'https://swapi.co/api/people/18/';
