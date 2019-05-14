@@ -14,6 +14,7 @@ request(process.argv[2], function (err, resp, body) {
       for (let j = 0; j < chars.length; j++) {
         if (chars[j] === wedgeAntilles) {
           count++;
+          j = chars.length;
         }
       }
     }
