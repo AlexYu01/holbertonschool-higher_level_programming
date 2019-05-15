@@ -2,9 +2,10 @@
 
 Javascripts interpretted on `Ubuntu 14.04 LTS` using `node v6.10.2` and must conform to [semistandard](https://github.com/Flet/semistandard) style.
 
-**Focus:** Learn about the basics of Javscript such as declaration/initializtion of variables and constants. How to define a function and call it from another JS file.
+### Focus
+Learn about the basics of Javscript such as declaration/initializtion of variables and constants. How to define a function and call it from another JS file.
 
-**Example Usages:**
+### Example Usages
 
 [0-javascript_is_amazing.js](https://github.com/AlexYu01/holbertonschool-higher_level_programming/blob/master/0x12-javascript-warm_up/0-javascript_is_amazing.js)
 ```
@@ -132,3 +133,7 @@ console.log(add(3, 5));
 ./13-main.js
 8
 ```
+### Author
+- [Alex Yu](https://github.com/AlexYu01)
+### Acknowledgements
+- [Holberton](https://www.holbertonschool.com/)
