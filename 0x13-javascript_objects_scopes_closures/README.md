@@ -2,9 +2,10 @@
 
 Javascripts interpretted on `Ubuntu 14.04 LTS` using `node v6.10.2` and must conform to [semistandard](https://github.com/Flet/semistandard) style.
 
-**Focus:** Learn about the objects, classes, inheritance, and scope of Javascript.
+### Focus
+Learn about the objects, classes, inheritance, and scope of Javascript.
 
-**Example Usages:**
+### Example Usages
 
 [0-rectangle.js](0-rectangle.js), [0-main.js](0-main.js)
 ```
@@ -142,3 +143,7 @@ c
 59
 0x13-javascript_objects_scopes_closures:$
 ```
+### Author
+- [Alex Yu](https://github.com/AlexYu01)
+### Acknowledgements
+- [Holberton](https://www.holbertonschool.com/)
