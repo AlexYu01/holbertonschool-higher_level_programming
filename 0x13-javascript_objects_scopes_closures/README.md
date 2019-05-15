@@ -1,6 +1,6 @@
 # Javascript - Objects, Scopes and Closures
 
-Javascripts interpretted on `Ubuntu 14.04 LTS` using `node v6.10.2` and must conform to [semistandard](https://github.com/Flet/semistandard) style.
+Javascripts interpretted on [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) using [node v6.10.2](https://nodejs.org/en/blog/release/v6.10.2/) and must conform to [semistandard](https://github.com/Flet/semistandard) style.
 
 ### Focus
 Learn about the objects, classes, inheritance, and scope of Javascript.
