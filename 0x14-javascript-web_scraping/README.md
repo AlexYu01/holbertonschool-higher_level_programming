@@ -179,7 +179,7 @@ https://t.co/jnIqSF8azO by Christian Agha
 ```
 ### Author
 - [Alex Yu](https://github.com/AlexYu01)
-### Acknowledgements
+### Acknowledgments
 - [Holberton](https://www.holbertonschool.com/)
 - [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 - [Loripsum API](http://loripsum.net/api)
