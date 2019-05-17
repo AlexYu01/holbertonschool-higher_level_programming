@@ -135,5 +135,5 @@ console.log(add(3, 5));
 ```
 ### Author
 - [Alex Yu](https://github.com/AlexYu01)
-### Acknowledgements
+### Acknowledgments
 - [Holberton](https://www.holbertonschool.com/)
