@@ -145,5 +145,5 @@ c
 ```
 ### Author
 - [Alex Yu](https://github.com/AlexYu01)
-### Acknowledgements
+### Acknowledgments
 - [Holberton](https://www.holbertonschool.com/)
