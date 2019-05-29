@@ -1,1 +1,6 @@
-# 0x00. Python - Hello, World
+# Python - Hello, World
+
+### Author
+- [Alex Yu](https://github.com/AlexYu01)
+### Acknowledgments
+- [Holberton](https://www.holbertonschool.com/)
