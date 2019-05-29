@@ -1,1 +1,6 @@
-# 0x08. Python - More Classes and Objects
+# Python - More Classes and Objects
+
+### Author
+- [Alex Yu](https://github.com/AlexYu01)
+### Acknowledgments
+- [Holberton](https://www.holbertonschool.com/)
