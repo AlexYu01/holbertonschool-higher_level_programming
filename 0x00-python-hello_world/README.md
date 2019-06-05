@@ -4,10 +4,12 @@
 Learn all about the Python programming language. How to use the Python interpreter. How can one print text and variables using print.
 
 ### Environment
-- [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) 
-- [Python 3.4.3](https://www.python.org/downloads/release/python-343/)
-- [PEP 8 (v1.7.x)](https://pep8.readthedocs.io/en/release-1.7.x/intro.html)
-- [GCC 4.8.4](https://www.gnu.org/software/gcc/gcc-4.8/)
+- OS: [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) 
+- Interpreter: [Python 3.4.3](https://www.python.org/downloads/release/python-343/)
+- Compiler: [GCC 4.8.4](https://www.gnu.org/software/gcc/gcc-4.8/)
+- Text editor: [Vim](https://www.vim.org/)
+- Others:
+	- [PEP 8 (v1.7.x)](https://pep8.readthedocs.io/en/release-1.7.x/intro.html)
 
 ### Example Usages
 
